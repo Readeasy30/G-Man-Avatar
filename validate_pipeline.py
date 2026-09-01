@@ -5,13 +5,16 @@ def run_integrity_audit():
     print("[AUDIT START]: Verifying G-Man Avatar infrastructure components...")
     
     # Crucial layout markers
-      critical_files = [
-     "index.html", 
+        critical_files = [
+        "index.html", 
         "supabase_adapter.py", 
         "speech_avatar.py", 
         "speech_avatar_profile.json",
         "production_grid_manifest.json",
-        "broadcast_updates.py"
+        "broadcast_updates.py",
+        "api_payload_mappings.py"
+    ]
+
     ]     
     
     missing_layers = 0
@@ -31,4 +34,4 @@ def run_integrity_audit():
 if __name__ == "__main__":
     run_integrity_audit()
  Deploy automated workspace layout data validation suite script 
-Update integrity check with network broadcast files
+Update integrity check with network broadcast files, Extend integrity check to include api_payload_mappings.py
