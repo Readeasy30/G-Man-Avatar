@@ -1,0 +1,9 @@
+{
+    "voice_id": "g_man_executive_v2",
+    "pitch": 0.95,
+    "speed": 1.05,
+    "model_type": "tts-1-hd",
+    "stability": 0.75,
+    "clarity": 0.85
+}
+ master vocal profile matrix configuration 
