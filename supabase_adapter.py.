@@ -1,0 +1,27 @@
+import os
+import requests
+
+class SupabaseClient:
+    def __init__(self):
+        # Insert your live credentials inside these quotes
+        self.url = "https://supabase.co"
+        self.key = "your-anon-or-service-role-key"
+        self.headers = {
+            "apikey": self.key,
+            "Authorization": f"Bearer {self.key}",
+            "Content-Type": "application/json",
+            "Prefer": "return=minimal"
+        }
+        print("[SUPABASE]: Production engine layer online.")
+
+    def sync_avatar_state(self, table: str, payload: dict):
+        try:
+            res = requests.post(f"{self.url}/rest/v1/{table}", json=payload, headers=self.headers)
+            print(f"[DATABASE STATUS]: {res.status_code}")
+        except Exception as e:
+            print(f"[DATABASE EXCEPTION]: {e}")
+
+if __name__ == "__main__":
+    db = SupabaseClient()
+    db.sync_avatar_state("avatar_logs", {"event": "G-Man master production engine linked."})
+Add Supabase configuration layer
